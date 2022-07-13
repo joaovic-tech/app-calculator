@@ -6,10 +6,9 @@
 
 ### shortcuts 😉
 
-| 1º | 2º |
-|----|----|
-| [how was the calculation done?](#calc) | [Change Theme ☀️🌙](#theme) |
-| [Smartphone on/off](#onOff) | [smartphone volume](#volume) |
+| 1º | 2º | 3º | 4º | 5º |
+|----|----|----|----|----|
+| [Calculator](#calc) | [Theme☀️🌙](#theme) | [on/off](#onOff) | [Volume](#volume) | [Time](#time) |
 
 </div>
 
@@ -23,6 +22,8 @@
 <div id="calc">
 
 # how was the calculation done?
+  
+</div>
 
 ### Constructor Function
 
@@ -35,7 +36,7 @@ const calc = new Calculator();
 calc.init();
 
 ```
-* `function Calculator()` é uma função construtora que servi de molde para criação de novos objetos e é instanciada a parte da variavel chamada `calc`. Dentro dessa função tera os seguintes recursos:
+* `function Calculator()` is a constructor function that serves as a template for creating new objects and the part of the variable called `calc` is instantiated. Within this function you will have the following resources:
 <hr/>
 
 ### Variables and Functions
@@ -45,8 +46,8 @@ calc.init();
 this.input = document.getElementById('input');
 this.display = document.getElementById('display');
 ```
-* `this.input` É o input que terá os valores que serão calculados.
-* `this.display` É onde será mostrado o resultado do calculo.
+* `this.input` It is the input that will have the values that will be calculated.
+* `this.display` This is where the calculation result will be displayed.
 <hr/>
 
 > #### `this.init()`
@@ -58,7 +59,7 @@ this.init = () => {
   this.buttonPress();
 }
 ```
-* `this.init` É uma `função de seta` para executar as principais funções.
+* `this.init` It is a `arrow function` to perform the main functions.
 <hr/>
 
 > #### `this.errorMessage()`
@@ -70,7 +71,7 @@ this.errorMessage = (msg) => {
   this.display.innerText = msg;
 }
 ```
-* `this.errorMessage()` Serve para mostar mensagens de possuiveis erros, essa função recebe uma propriedade chamada de `msg` que é o texto da mensagem.
+* `this.errorMessage()` It serves to show messages of possible errors, this function receives a property called `msg` which is the text of the message.
 
 <hr/>
 
@@ -84,7 +85,7 @@ this.checkChar = () => {
   });
 }
 ```
-* `this.checkChar()` O input está desabilitado porém se o usuário tentar habilitar e digitar algo automáticamente o input será limpo e chamarar a função `this.errorMessage` com uma mensagem de erro. Essa função adiciona um evento de `click`.
+* `this.checkChar()` The input is disabled, but if the user tries to enable and type something automatically, the input will be cleared and call the `this.errorMessage` function with an error message. This function adds a `click` event.
 
 <hr/>
 
@@ -107,7 +108,7 @@ this.calc = () => {
   }
 }
 ```
-* `this.calc` dentro dessa função estou usando a declaração `try/catch` para calcular e se não conseguir ele mostar algum erro. e essa função `this.calc` serve para pega todos os valores do `this.input` e chama um método `eval()` para calcular. esse método é bastante perigoso, pois além de calcular ele executa códigos Javascript, por exemplo `alert('teste')` , e por isso desabilitei o input de texto.
+* `this.calc` inside this function i am using `try/catch` instruction to calculate and if not, it shows an error. and this `this.calc` function takes all the values of `this.input` and calls a `eval()` method to calculate it. this method is quite dangerous, as in addition to calculating it executes Javascript code, for example `alert('test')` , so I disabled text input.
 
 <hr/>
 
@@ -119,7 +120,7 @@ this.setValueInput = (el) => {
     this.input.focus();
   }
 ```
-* `this.setValueInput` é uma função que irar receber um valor que poderá ser um número ou uma string, e esse valor será adicionado no input.
+* `this.setValueInput` is a function that will receive a value that can be a number or a string, and that value will be added to the input.
 
 <hr/>
 
@@ -130,7 +131,7 @@ this.cleanInput = () => {
   this.display.innerText = '';
 }
 ```
-* `this.cleanInput` essa função irar limpar o input quando for chamado.
+* `this.cleanInput` this function will clear the input when called.
 
 <hr/>
 
@@ -138,7 +139,7 @@ this.cleanInput = () => {
 ```js
 this.deleteOne = () => this.input.value = this.input.value.slice(0, -1);
 ```
-* `this.deleteOne` é uma função que apagar um valor do input usando o método `slice()`
+* `this.deleteOne` is a function that erases a value from the input using the `slice()` method
 
 > #### `this.ButtonClick()`
 ```js
@@ -158,7 +159,7 @@ this.buttonClick = () => {
   });
 }
 ```
-* `this.ButtonClick` Essa função pega o valor de cada botão e envia para a função `this.setValueInput(value)`.
+* `this.ButtonClick` This function takes the value of each button and sends it to the `this.setValueInput(value)` function.
 
 <hr/>
 
@@ -170,7 +171,7 @@ this.pressEnter = () => {
   })
 }
 ```
-* `this.pressEnter` essa função adiciona um evento de click para executar o calculo quando a tecla enter for precionada.
+* `this.pressEnter` this function adds a click event to perform the calculation when the enter key is pressed.
 
 > #### `this.buttonPress()`
 ```js
@@ -201,8 +202,136 @@ this.buttonPress = () => {
   });
 }
 ```
-* `this.buttonPress` essa função adiciona um evento `keydown` para pegar a tecla que o usuário digitou e verifica se é um número, operador ou um ponto e envia esse valor para o `this.setValueInput()`.
-
-## Change theme.
-
+* `this.buttonPress` this function adds a `keydown` event to take the key the user has typed and checks if it is a number, operator or dot and sends that value to `this.setValueInput()`.
+ 
+<hr/>
+  
+<div id="theme">
+  
+## Change theme. 
+  
 </div>
+  
+* Firstly in our html we have an `input` tag of type `checkbox` and a `label` and inside this label there are icons and a div. Follow the html code.
+  
+```html
+<input type="checkbox" id="checkbox" />
+<label for="checkbox" class="label">
+  <i class="fas fa-sun"></i>
+  <i class="fas fa-moon hidden"></i>
+  <div class="ball"></div>
+</label>
+```
+  
+* in javascript all the variables that will be used were created.
+```js
+const html = document.querySelector('html');
+const checkbox = document.getElementById('checkbox');
+const moon = document.querySelector('.fa-moon');
+const sun = document.querySelector('.fa-sun');
+```
+  
+* After that we have a `change` event in our checkbox which will have a function with the `toggle` method.
+* This `toggle` method allows you to check if something exists, in this case it checks if there is a dark-mode class in the html, if this class exists remove it if not add it.
+```js
+checkbox.addEventListener('change', () => {
+  html.classList.toggle('dark-mode');
+  moon.classList.toggle('hidden');
+  sun.classList.toggle('hidden');
+});
+```
+
+<div id="onOff">
+  
+  ## Smartphone on/off
+  
+</div>
+
+* This function is very simple. With the help of css we have a class called off that will have a display property with the value none, so in Javascript we have the toggle method that removes and adds this class every time the on/off button is clicked.
+
+```js
+function smartphoneOff() {
+  screen.classList.toggle('off');
+  phone.classList.toggle('off');
+}
+
+btnPower.addEventListener('click', smartphoneOff);
+```
+
+<hr/>
+  
+<div id="volume">
+  
+  ## Smartphone volume
+  
+</div>
+
+* There are two buttons, one to decrease and one to increase the music volume. So I added a `click` event on each button to call its certain functions, basically inside these functions we take the width of the div(volume) and add +50px and also increase the music volume 0.5 times. Both functions are identical, but one decreases and the other increases.
+
+```js
+function smartphoneVolumeUp() {
+  const volumeWidth = volume.clientWidth;
+  volume.style.width = (volumeWidth + 50) + "px";
+  if (audio.volume < 1) audio.volume += 0.5;
+}
+
+function smartphoneVolumeDown() {
+  const volumeWidth = volume.clientWidth;
+  volume.style.width = (volumeWidth - 50) + "px";
+  if (audio.volume > 0) audio.volume -= 0.5;
+}
+
+volumeUp.addEventListener('click', smartphoneVolumeUp);
+volumeDown.addEventListener('click', smartphoneVolumeDown);
+```
+
+<hr/>
+
+<div id="time">
+  
+  ## Current time
+  
+  > Weather based on brazil brazil
+  
+</div>
+
+* We have three functions
+
+* The `getTime()` function as the name implies will return the current time formatted.
+```js
+function getTime() {
+  const date = new Date();
+  const hour = addZero(date.getHours());
+  const minutes = addZero(date.getMinutes());
+  const seconds = addZero(date.getSeconds());
+  return `${hour}:${minutes}:${seconds}`;
+}
+```
+
+* Inside `getTime` we also have a function `addZero()`, which will add a zero if the number is less than 10.
+```js
+function addZero(value) {
+  if (value < 10) value = `0${value}`;
+  return value
+}
+```
+
+* We also have the `changeTime` function which will change the html value to the formatted time.
+```js
+function changeTime(time) {
+  hoursDiv.innerHTML = `<span>${time}</span>`;
+}
+```
+
+* Finally, we have `setInterval` which will execute the `changeTime()` function in a period of 1 second.
+```js
+setInterval(() => {
+  changeTime(getTime());
+}, 1000);
+```
+
+### Author - João Victor
+
+- [Instagram](https://www.instagram.com/joaovic.tech/)
+- [Linkedin](https://www.linkedin.com/in/joaovic-tech/)
+- [Twitter](https://twitter.com/joaovic_tech)
