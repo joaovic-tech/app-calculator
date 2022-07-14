@@ -329,9 +329,13 @@ setInterval(() => {
   changeTime(getTime());
 }, 1000);
 ```
+## :memo: Licença
 
-### Author - João Victor
+This project is under the MIT license. See the [LICENSE](LICENSE) file for more details.
 
-- [Instagram](https://www.instagram.com/joaovic.tech/)
+---
+
+Made with ♥ by [joaovic-tech]() 
+- [Instagram](https://www.instagram.com/joaovic.tech/) 
 - [Linkedin](https://www.linkedin.com/in/joaovic-tech/)
 - [Twitter](https://twitter.com/joaovic_tech)
