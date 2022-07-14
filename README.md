@@ -71,7 +71,7 @@ this.errorMessage = (msg) => {
   this.display.innerText = msg;
 }
 ```
-* `this.errorMessage()` It serves to show messages of possible errors, this function receives a property called `msg` which is the text of the message.
+* `this.errorMessage()` It serves to show messages of possible errors, this function receives a parameter called `msg` which is the text of the message.
 
 <hr/>
 
@@ -247,7 +247,7 @@ checkbox.addEventListener('change', () => {
   
 </div>
 
-* This function is very simple. With the help of css we have a class called off that will have a display property with the value none, so in Javascript we have the toggle method that removes and adds this class every time the on/off button is clicked.
+* This function is very simple. With the help of css we have a class called off that will have a display parameter with the value none, so in Javascript we have the toggle method that removes and adds this class every time the on/off button is clicked.
 
 ```js
 function smartphoneOff() {
