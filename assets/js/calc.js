@@ -102,7 +102,6 @@ function Calculator() {
       this.display.classList.remove('errorMessage');
     });
   }
-
 }
 const calc = new Calculator();
 calc.init();

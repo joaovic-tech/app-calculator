@@ -6,9 +6,8 @@ const volumeBox = document.getElementById('volume-box');
 const volume = document.getElementById('volume');
 const volumeUp = document.querySelector('.volume-up');
 const volumeDown = document.querySelector('.volume-down');
-const audio = document.getElementById('audio');
+const audio = document.querySelector('audio');
 audio.volume = 0.5;
-audio.onplay;
 
 function smartphoneOff() {
   screen.classList.toggle('off');
@@ -23,6 +22,7 @@ function showVolume() {
 }
 
 function smartphoneVolumeUp() {
+  audio.play();
   showVolume();
   const volumeWidth = volume.clientWidth;
   volume.style.width = (volumeWidth + 50) + "px";
@@ -30,6 +30,7 @@ function smartphoneVolumeUp() {
 }
 
 function smartphoneVolumeDown() {
+  audio.play();
   showVolume();
   const volumeWidth = volume.clientWidth;
   volume.style.width = (volumeWidth - 50) + "px";
