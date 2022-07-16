@@ -12,7 +12,7 @@
   --color: #e4e8f3;
   --color-2: #f3f3f4;
   --color-gray: #4e505f;
-  --color-gray-2: #d2d3da;
+  --color-gray-2: #c6c7ce;
   --color-primary: #ed254e;
   --color-secondary: #ed254d9f;
 }
@@ -30,14 +30,17 @@ body {
   color: var(--color-text);
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #back-cover {
   position: absolute;
   top: 0;
   width: 100%;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 #phone {
@@ -48,9 +51,6 @@ body {
   border: 5px solid var(--color-text);
   background: var(--color);
   border-radius: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: background 500ms linear;
 }
 
@@ -74,9 +74,6 @@ body {
 }
 
 #icons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 0.3rem;
   font-size: 12px;
 }
@@ -103,10 +100,7 @@ body {
   position: absolute;
   top: 2px;
   left: 2px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--color);
+  background-color: var(--color-gray-2);
   border-radius: 50%;
   height: 22px;
   width: 22px;

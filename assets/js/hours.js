@@ -1,5 +1,3 @@
-const hoursDiv = document.getElementById('hours');
-
 function addZero(value) {
   if (value < 10) value = `0${value}`;
   return value
@@ -13,8 +11,17 @@ function getTime() {
   return `${hour}:${minutes}:${seconds}`;
 }
 
+function createTime() {
+  const div = document.createElement('div');
+  const icons = document.getElementById('icons');
+  div.id = 'hours';
+  icons.insertAdjacentElement('afterend', div);
+}
+createTime();
+
 function changeTime(time) {
-  hoursDiv.innerHTML = `<span>${time}</span>`;
+  const div = document.getElementById('hours');
+  div.innerHTML = `<span>${time}</span>`;
 }
 
 setInterval(() => {

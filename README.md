@@ -329,9 +329,15 @@ setInterval(() => {
   changeTime(getTime());
 }, 1000);
 ```
-## :memo: Licença
+## :memo: License
 
 This project is under the MIT license. See the [LICENSE](LICENSE) file for more details.
+
+---
+
+## 🎶 Music License
+
+[Music taken from YouTube audio library](https://studio.youtube.com/channel/UCdGMBPwBxTpo5GRU5voiiMA/music)
 
 ---
 
